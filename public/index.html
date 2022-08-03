@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Park-Visting Planning</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div id="greeting-bar">
+      <h1 id="greetings">Let's make your park-visiting plans here!</h1>
+    </div>
+    <div id="container">
+      <div id="top-bar">
+        <h3 id="title">Park-Visiting Planning</h3>
+        <form id="all-contents">
+          <label id="state-option" for="select-state"> State </label>
+          <select id="select-state"></select>
+          <br />
+          <label for="input-park">Park</label>
+          <input
+            type="text"
+            id="input-park"
+            placeholder="Input the park name."
+            autocomplete="off"
+          />
+          <br />
+          <h4 id="priority">Priority</h4>
+          <div>
+            <div class="radio">
+              <label for="rating-high">High</label>
+              <input
+                type="radio"
+                name="rating"
+                value="High"
+                id="rating-high"
+                checked="true"
+              />
+            </div>
+            <div class="radio">
+              <label for="rating-midium">Medium</label>
+              <input
+                type="radio"
+                name="rating"
+                value="Medium"
+                id="rating-medium"
+                checked="true"
+              />
+            </div>
+            <div class="radio">
+              <label for="rating-low">Low</label>
+              <input
+                type="radio"
+                name="rating"
+                value="Low"
+                id="rating-low"
+                checked="true"
+              />
+            </div>
+          </div>
+
+          <button type="submit" class="button" id="add-button">add</button>
+        </form>
+      </div>
+    </div>
+
+    <div id="park-list"></div>
+
+    <script src="../node_modules/axios/dist/axios.min.js"></script>
+
+    <script src="index.js"></script>
+  </body>
+</html>
