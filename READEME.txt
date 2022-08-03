@@ -1,0 +1,28 @@
+Park Visiting Plan App (Emma)
+Introduction:
+By using this app, you can make a good plan for parks visiting in the US. It is kind of similar to to-do-list application but I have more functionalities than that. Basically, you can choose a state and input the name of the park you want to go to. You can also manipulate your plans if you need to change your mind. 
+MVP
+	You can add a park to the list.
+	You can delete a park when you change your mind.
+	You can mark a park as “visited” after you make it there.
+Front End
+JavaScript, css, html
+Back End
+	GET, POST, and DELETE are all used to manipulate data. 
+	Functions are all placed in a controller file. 
+	Express is used as the framework for the back end. 
+	Axios and dotenv are applied in this project.
+Database
+	Sequelize is used to retrieve information from the data base. 
+	Two tables (a state table and a park table) are used for this project. 
+	Postgres is utilized to get the connection string. 
+API used:
+Google search
+Shiny points:
+	When you choose a state from the dropdown list, you will be able to get a picture of that state displayed in your park card.
+	When you input a park name, there will be a button for you to click on to get the information at Google about that park so that you can do some research before you finally make your decision.
+Difficulties and solutions:
+	It is difficult to combine the state as well as the park information and display them all in the same park object. To solve this issue, the two SQL tables are joined when “getParks” function is called. The “name” row for the state is renamed in the park object, which is sent back to the front end. 
+
+
+
