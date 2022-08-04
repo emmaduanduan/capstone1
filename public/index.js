@@ -6,7 +6,7 @@ const addBtn = document.querySelector("#add-button");
 // const tag = document.querySelector("#tag");
 
 function getStates() {
-  axios.get("http://localhost:3000/states").then((res) => {
+  axios.get("/states").then((res) => {
     res.data.forEach((state) => {
       let option = document.createElement("option");
       option.setAttribute("value", state["state_id"]);
@@ -24,7 +24,7 @@ function alreadyVisited(id) {
 function getParks() {
   parkList.innerHTML = "";
 
-  axios.get("http://localhost:3000/parks").then((res) => {
+  axios.get("/parks").then((res) => {
     res.data.forEach((park) => {
       let a = document.createElement("div");
       a.setAttribute("id", park.park_id);
@@ -61,7 +61,7 @@ function handleSubmit(e) {
     priority: priorityValue,
     stateId: +stateSelect.value,
   };
-  axios.post("http://localhost:3000/parks", body).then(() => {
+  axios.post("/parks", body).then(() => {
     parkInput.value = "";
     getParks();
   });
@@ -70,7 +70,7 @@ function handleSubmit(e) {
 function deleteCard(id) {
   if (confirm("Do you want to delete this park card?")) {
     axios
-      .delete(`http://localhost:3000/parks/${id}`)
+      .delete(`/parks/${id}`)
       .then(() => {
         getParks();
       })
